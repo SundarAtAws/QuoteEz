@@ -92,8 +92,7 @@ public class ImageProcessingController {
 		String fileNamePath = "/files/info.txt";
 		ClassLoader classLoader = getClass().getClassLoader();
 		File jsonInputFile = new File(classLoader.getResource(fileNamePath).getFile());
-		filePath = jsonInputFile.getParent();
-		filePath = filePath + "\/";
+		filePath = jsonInputFile.getParent();		
 		if (!mpf.getOriginalFilename().isEmpty()) {
 	         BufferedOutputStream outputStream = new BufferedOutputStream(
 	               new FileOutputStream(
