@@ -1,0 +1,296 @@
+{
+    "drivers": [
+        {
+            "driverLicenseNumber": "I1234562",
+            "firstName": "ALEXANDER J",
+            "lastName": "SAMPLE",
+            "dateOfBirth": "8/31/1977",
+            "licenseDate": "8/31/2009",
+            "licenseState": "CA",
+            "maritalStatus": "Married",
+            "address": "2570 24th STREET, SACRAMENTO, CA 95818",
+            "genderRate": 0.03,
+            "maritalStatusRate": 0.01,
+            "dateOfBirthYear": 1977,
+            "ageRate": 0.3,
+            "customerRatingIndex": 0.33999999999999997,
+            "driverRatingGroup": "C",
+            "creditScore": 760,
+            "creditScoreFactor": 0.01,
+            "previousLossRate": 0.4,
+            "driverRatingFactor": 0.75,
+            "gender": "Male",
+            "ssn": 409522002
+        },
+        {
+            "driverLicenseNumber": "I1234561",
+            "firstName": "SEIJI",
+            "lastName": "SAMPLE",
+            "dateOfBirth": "8/31/1977",
+            "licenseDate": "9/30/2010",
+            "licenseState": "CA",
+            "maritalStatus": "Married",
+            "address": "2570 24th STREET, SACRAMENTO, CA 95818",
+            "genderRate": 0.03,
+            "maritalStatusRate": 0.01,
+            "dateOfBirthYear": 1977,
+            "ageRate": 0.3,
+            "customerRatingIndex": 0.33999999999999997,
+            "driverRatingGroup": "C",
+            "creditScore": 704,
+            "creditScoreFactor": 0.02,
+            "previousLossRate": 0.89,
+            "driverRatingFactor": 1.25,
+            "gender": "Male",
+            "ssn": 410522012
+        }
+    ],
+    "vehicle": {
+        "carRegNo": "",
+        "make": "ACURA",
+        "model": "ILX",
+        "bodyStyle": "4D",
+        "vehicleValue": 31200,
+        "lri": "D",
+        "cdi": "C",
+        "dti": "A",
+        "vsd": "D",
+        "vin": "7J3ZZ56T783450000"
+    },
+    "insurerRating": [
+        {
+            "insuranceName": "Insurer ONE",
+            "basePremium": 2745.6,
+            "coverages": [
+                {
+                    "coverageRange": 25,
+                    "liabilityBIPD": -200,
+                    "collision": -142.857142857143,
+                    "comprehensive": -160
+                },
+                {
+                    "coverageRange": 50,
+                    "liabilityBIPD": -180,
+                    "collision": -128.571428571429,
+                    "comprehensive": -144
+                },
+                {
+                    "coverageRange": 75,
+                    "liabilityBIPD": -160,
+                    "collision": -114.285714285714,
+                    "comprehensive": -128
+                },
+                {
+                    "coverageRange": 100,
+                    "liabilityBIPD": -150,
+                    "collision": -107.142857142857,
+                    "comprehensive": -120
+                },
+                {
+                    "coverageRange": 200,
+                    "liabilityBIPD": -130,
+                    "collision": -92.8571428571429,
+                    "comprehensive": -104
+                },
+                {
+                    "coverageRange": 250,
+                    "liabilityBIPD": 0,
+                    "collision": 0,
+                    "comprehensive": 0
+                },
+                {
+                    "coverageRange": 300,
+                    "liabilityBIPD": 100,
+                    "collision": 71.4285714285714,
+                    "comprehensive": 80
+                },
+                {
+                    "coverageRange": 400,
+                    "liabilityBIPD": 125,
+                    "collision": 89.2857142857143,
+                    "comprehensive": 100
+                },
+                {
+                    "coverageRange": 750,
+                    "liabilityBIPD": 140,
+                    "collision": 100,
+                    "comprehensive": 112
+                },
+                {
+                    "coverageRange": 1000,
+                    "liabilityBIPD": 160,
+                    "collision": 114.285714285714,
+                    "comprehensive": 128
+                },
+                {
+                    "coverageRange": 2000,
+                    "liabilityBIPD": 180,
+                    "collision": 128.571428571429,
+                    "comprehensive": 144
+                },
+                {
+                    "coverageRange": 3000,
+                    "liabilityBIPD": 200,
+                    "collision": 142.857142857143,
+                    "comprehensive": 160
+                }
+            ]
+        },
+        {
+            "insuranceName": "Insurer TWO",
+            "basePremium": 2889.1200000000003,
+            "coverages": [
+                {
+                    "coverageRange": 25,
+                    "liabilityBIPD": -190,
+                    "collision": -135.714285714286,
+                    "comprehensive": -152
+                },
+                {
+                    "coverageRange": 50,
+                    "liabilityBIPD": -170,
+                    "collision": -121.428571428571,
+                    "comprehensive": -136
+                },
+                {
+                    "coverageRange": 75,
+                    "liabilityBIPD": -165,
+                    "collision": -117.857142857143,
+                    "comprehensive": -132
+                },
+                {
+                    "coverageRange": 100,
+                    "liabilityBIPD": -150,
+                    "collision": -107.142857142857,
+                    "comprehensive": -120
+                },
+                {
+                    "coverageRange": 200,
+                    "liabilityBIPD": -145,
+                    "collision": -103.571428571429,
+                    "comprehensive": -116
+                },
+                {
+                    "coverageRange": 250,
+                    "liabilityBIPD": -10,
+                    "collision": -7.14285714285714,
+                    "comprehensive": -8
+                },
+                {
+                    "coverageRange": 300,
+                    "liabilityBIPD": 0,
+                    "collision": 0,
+                    "comprehensive": 0
+                },
+                {
+                    "coverageRange": 400,
+                    "liabilityBIPD": 95,
+                    "collision": 67.8571428571429,
+                    "comprehensive": 76
+                },
+                {
+                    "coverageRange": 750,
+                    "liabilityBIPD": 125,
+                    "collision": 89.2857142857143,
+                    "comprehensive": 100
+                },
+                {
+                    "coverageRange": 1000,
+                    "liabilityBIPD": 145,
+                    "collision": 103.571428571429,
+                    "comprehensive": 116
+                },
+                {
+                    "coverageRange": 2000,
+                    "liabilityBIPD": 185,
+                    "collision": 132.142857142857,
+                    "comprehensive": 148
+                },
+                {
+                    "coverageRange": 3000,
+                    "liabilityBIPD": 195,
+                    "collision": 139.285714285714,
+                    "comprehensive": 156
+                }
+            ]
+        },
+        {
+            "insuranceName": "Insurer THREE",
+            "basePremium": 2751.84,
+            "coverages": [
+                {
+                    "coverageRange": 25,
+                    "liabilityBIPD": -225,
+                    "collision": -160.714285714286,
+                    "comprehensive": -180
+                },
+                {
+                    "coverageRange": 50,
+                    "liabilityBIPD": -190,
+                    "collision": -135.714285714286,
+                    "comprehensive": -152
+                },
+                {
+                    "coverageRange": 75,
+                    "liabilityBIPD": -140,
+                    "collision": -100,
+                    "comprehensive": -112
+                },
+                {
+                    "coverageRange": 100,
+                    "liabilityBIPD": -130,
+                    "collision": -92.8571428571429,
+                    "comprehensive": -104
+                },
+                {
+                    "coverageRange": 200,
+                    "liabilityBIPD": -120,
+                    "collision": -85.7142857142857,
+                    "comprehensive": -96
+                },
+                {
+                    "coverageRange": 250,
+                    "liabilityBIPD": -110,
+                    "collision": -78.5714285714286,
+                    "comprehensive": -88
+                },
+                {
+                    "coverageRange": 300,
+                    "liabilityBIPD": 0,
+                    "collision": 0,
+                    "comprehensive": 0
+                },
+                {
+                    "coverageRange": 400,
+                    "liabilityBIPD": 55,
+                    "collision": 39.2857142857143,
+                    "comprehensive": 44
+                },
+                {
+                    "coverageRange": 750,
+                    "liabilityBIPD": 100,
+                    "collision": 71.4285714285714,
+                    "comprehensive": 80
+                },
+                {
+                    "coverageRange": 1000,
+                    "liabilityBIPD": 140,
+                    "collision": 100,
+                    "comprehensive": 112
+                },
+                {
+                    "coverageRange": 2000,
+                    "liabilityBIPD": 160,
+                    "collision": 114.285714285714,
+                    "comprehensive": 128
+                },
+                {
+                    "coverageRange": 3000,
+                    "liabilityBIPD": 180,
+                    "collision": 128.571428571429,
+                    "comprehensive": 144
+                }
+            ]
+        }
+    ]
+}

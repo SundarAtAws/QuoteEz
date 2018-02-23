@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>QuoteEz</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="${pageContext.request.contextPath}/resources/images/favicon.png" rel="icon">
+  <link href="${pageContext.request.contextPath}/resources/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="${pageContext.request.contextPath}/resources/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="${pageContext.request.contextPath}/resources/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/resources/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/resources/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/resources/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Avilon
+    Theme URL: https://bootstrapmade.com/avilon-bootstrap-landing-page-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+
+<script>
+var dropzone = new Dropzone('#demo-upload', {
+	  previewTemplate: document.querySelector('#preview-template').innerHTML,
+	  parallelUploads: 2,
+	  thumbnailHeight: 120,
+	  thumbnailWidth: 120,
+	  maxFilesize: 3,
+	  filesizeBase: 1000,
+	  thumbnail: function(file, dataUrl) {
+	    if (file.previewElement) {
+	      file.previewElement.classList.remove("dz-file-preview");
+	      var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+	      for (var i = 0; i < images.length; i++) {
+	        var thumbnailElement = images[i];
+	        thumbnailElement.alt = file.name;
+	        thumbnailElement.src = dataUrl;
+	      }
+	      setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+	    }
+	  }
+
+	});
+
+</script>
+<style>
+body  {
+    background-image:url("${pageContext.request.contextPath}/resources/images/bg1.png");
+    background-position: inherit;
+    background-size: cover;
+    background-color: white;
+}
+.dropzone {
+    background: inherit;
+    border-radius: 5px;
+    border: 2px dashed rgb(0, 135, 247);
+    border-image: none;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: yellow;
+    color: white;
+    text-align: center;
+}
+
+</style>
+
+  
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">QuoteEz</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title=""></a> -->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li><a href="#about">Get Quote</a></li>
+		   <li><a href="#faq">FAQs</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+
+    <div class="intro-text">
+      <h2>Welcome to QuoteEz</h2>
+      <p>
+		  Easy to grab Quotation for vehicle. <br>
+		  Getting quotation is as simple as uploading an image! <br>
+	  </p>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+
+
+    </div>
+
+  </section><!-- #intro -->
+
+  <main id="main">
+
+    <!--==========================
+      Get Quote
+    ============================-->
+    <section id="about" class="section-bg">
+      <div class="container-fluid">
+        <div class="section-header">
+          <h3 class="section-title">Get Quote</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">
+            Upload Driver license number and the vehicle RegNo/VIN number images
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 content wow fadeInLeft">
+            <SECTION>
+			  <DIV id="dropzone">
+				<form class="dropzone" id="demo-upload" action="imageToText" enctype="multipart/form-data" method="POST" >
+				  <DIV class="dz-message" style="color: #00008B; font-size: medium;">    
+					Drop files here or click to upload.<BR>
+					<SPAN class="note needsclick">(Upload an image with <i> <Strong>Driving license number</Strong></i>)</SPAN>
+				  </DIV>
+				</form>
+			  </DIV>
+			</SECTION>
+          </div>
+		  
+		   <div class="col-lg-6 content wow fadeInRight">
+            <SECTION>
+			  <DIV id="dropzone">
+				<form class="dropzone" id="demo-upload" action="imageToText" enctype="multipart/form-data" method="POST" >
+				  <DIV class="dz-message" style="color: #00008B; font-size: medium;">    
+					Drop files here or click to upload.<BR>
+					<SPAN class="note needsclick">(Upload an image with <i><Strong>VIN number</Strong></i> or <i><Strong>Vehicle RegNo</Strong></i>)</SPAN>
+				  </DIV>
+				</form>
+			  </DIV>
+			</SECTION>
+          </div>
+			      <a href="#features" class="btn-get-started scrollto">Go to Household</a>
+
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Product Featuress Section
+    ============================-->
+    <section id="features">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-lg-8 offset-lg-4">
+            <div class="section-header wow fadeIn" data-wow-duration="1s">
+              <h3 class="section-title">Drivers in Household</h3>
+              <span class="section-divider"></span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-5 features-img">
+            <img src="${pageContext.request.contextPath}/resources/images/product-features.png" alt="" class="wow fadeInLeft">
+          </div>
+
+          <div class="col-lg-8 col-md-7 ">
+
+            <div class="row">
+
+              <div class="col-lg-6 col-md-6 box wow fadeInRight">
+                <div class="icon"><i class="ion-person"></i></div>
+                <h4 class="title"><a href="">Phanindra Uppalapati</a></h4>
+                <p class="description">Driver1</p>
+              </div>
+			  
+              <div class="col-lg-6 col-md-6 box wow fadeInRight">
+                <div class="icon"><i class="ion-person"></i></div>
+                <h4 class="title"><a href="">Kumaravel V</a></h4>
+                <p class="description">Driver2</p>
+              </div>
+              
+            </div>
+			
+			<div class="row">
+
+              <div class="col-lg-6 col-md-6 box wow fadeInRight">
+                <div class="icon"><i class="ion-person"></i></div>
+                <h4 class="title"><a href="">Venkatesh</a></h4>
+                <p class="description">Driver3</p>
+              </div>
+
+            </div>
+			      <a href="#pricing" class="btn-get-started scrollto">Get Quote</a>
+
+        </div>
+
+      </div>
+
+    </section><!-- #features -->
+
+    <!--==========================
+      Pricing Section
+    ============================-->
+    <section id="pricing" class="section-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Approximate Quote</h3>
+          <p class="section-description">Below are the apporx. quotation for the given drivers and vehicle.
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box wow fadeInLeft">
+              <h3>Insurer One</h3>
+              <h4><sup>$</sup>180.00<span> /month</span></h4>
+			  <h5><sup>$</sup>1080.00<span> /6 months</span></h5>
+              <a href="#" class="get-started-btn">Buy</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box featured wow fadeInUp">
+              <h3>Insurer Two</h3>
+              <h4><sup>$</sup>192.75<span> /month</span></h4>
+			  <h5><sup>$</sup>1156.50<span> /6 months</span></h5>
+              <a href="#" class="get-started-btn">Buy</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box wow fadeInRight">
+              <h3>Insurer Three</h3>
+              <h4><sup>$</sup>201.00<span> /month</span></h4>
+			  <h5><sup>$</sup>1206.00<span> /6 months</span></h5>
+              <a href="#" class="get-started-btn">Buy</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- #pricing -->
+
+
+    <!--==========================
+      Frequently Asked Questions Section
+    ============================-->
+    <section id="faq">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Frequently Asked Questions</h3>
+          <span class="section-divider"></span>
+        </div>
+
+        <ul id="faq-list" class="wow fadeInUp">
+          <li>
+            <a data-toggle="collapse" class="collapsed" href="#faq1">What does auto insurance cover? <i class="ion-android-remove"></i></a>
+            <div id="faq1" class="collapse" data-parent="#faq-list">
+              <p>
+                Auto insurance covers you, your vehicle and others involved in a vehicular accident.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq2" class="collapsed">What happens if I lie about my driving history? <i class="ion-android-remove"></i></a>
+            <div id="faq2" class="collapse" data-parent="#faq-list">
+              <p>
+                If you lie about your driving history, the DMV reports that you are committing what is known as “soft fraud.” If you do lie, the insurance company can deny you services and cancel your coverage.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq3" class="collapsed">Are there different insurance coverage types? <i class="ion-android-remove"></i></a>
+            <div id="faq3" class="collapse" data-parent="#faq-list">
+              <p>
+                Yes, there are different insurance coverage types and they are as follows: Bodily Liability, Property Damage Liability, Comprehensive, Collision and Uninsured & Underinsured.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq4" class="collapsed">Is auto insurance mandatory? <i class="ion-android-remove"></i></a>
+            <div id="faq4" class="collapse" data-parent="#faq-list">
+              <p>
+                Yes, auto insurance is mandatory in every state across the U.S., but insurance carrying laws vary. To make sure you have the right insurance, visit your state government’s transportation website.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq5" class="collapsed">What happens if I don’t get auto insurance? <i class="ion-android-remove"></i></a>
+            <div id="faq5" class="collapse" data-parent="#faq-list">
+              <p>
+                If you get in an accident and you’re uninsured, you face getting sued, losing your life’s savings and getting jail time.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq6" class="collapsed">How expensive is auto insurance? <i class="ion-android-remove"></i></a>
+            <div id="faq6" class="collapse" data-parent="#faq-list">
+              <p>
+                Auto insurance is relatively inexpensive, but this depends on your driving history and credit report.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- #faq -->
+
+    <!--==========================
+      Our Team Section
+    ============================-->
+    <section id="team" class="section-bg">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Our Team</h3>
+          <span class="section-divider"></span>
+        </div>
+        <div class="row wow fadeInUp">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/phanindra.jpg" alt=""></div>
+              <h4>Phanindra Uppalapati</h4>
+              <span>Chief Executive Officer</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/kumar.jpg" alt=""></div>
+              <h4>Kumaravel V</h4>
+              <span>Product Manager</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/anu.jpg" alt=""></div>
+              <h4>Anupriya</h4>
+              <span>CTO</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/venkat.jpg" alt=""></div>
+              <h4>Venkatesh</h4>
+              <span>Accountant</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact">
+      <div class="container">
+        <div class="row wow fadeInUp">
+
+          <div class="col-lg-4 col-md-4">
+            <div class="contact-about">
+              <h3>QuoteEz</h3>
+              <p>We're ready to help you to know approx quote for your vehicle</p>
+              <div class="social-links">
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="info">
+              <div>
+                <i class="ion-ios-location-outline"></i>
+                <p>Semmencherry<br>Chennai, Tamilanadu 60119</p>
+              </div>
+
+              <div>
+                <i class="ion-ios-email-outline"></i>
+                <p>info@quoteez.com</p>
+              </div>
+
+              <div>
+                <i class="ion-ios-telephone-outline"></i>
+                <p>1800 22 2222</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>QuoteEz</strong>. All Rights Reserved
+          </div>
+      
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="#intro" class="scrollto">Home</a>
+            <a href="#about" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="${pageContext.request.contextPath}/resources/lib/jquery/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/lib/easing/easing.min.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/lib/wow/wow.min.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/lib/superfish/hoverIntent.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/lib/superfish/superfish.min.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/lib/magnific-popup/magnific-popup.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="${pageContext.request.contextPath}/resources/contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+
+</body>
+</html>
