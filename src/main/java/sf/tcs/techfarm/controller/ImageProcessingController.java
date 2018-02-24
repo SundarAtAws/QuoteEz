@@ -35,7 +35,8 @@ public class ImageProcessingController {
 	@RequestMapping(value = "/vinImageToText", method = RequestMethod.POST)
 	public String vinImageToText(MultipartHttpServletRequest request) throws IOException, Exception {
 		String fileName = storeImages(request);
-		String imagepath = filePath + fileName;
+		//String imagepath = filePath + fileName;
+		String imagepath = filePath + "/"+fileName;
 		String description = ImageToText.getTextDescription(imagepath);
 		description = description.replaceAll("\\s+","");
 		buildVINDescInRequest(request, fileName, description);
@@ -45,7 +46,8 @@ public class ImageProcessingController {
 	@RequestMapping(value = "/dlImageToText", method = RequestMethod.POST)
 	public String dlImageToText(MultipartHttpServletRequest  request) throws IOException, Exception {
 		String fileName = storeImages(request);
-		String imagepath = filePath + fileName;
+		//String imagepath = filePath + fileName;
+		String imagepath = filePath + "/"+fileName;
 		String description = ImageToText.getTextDescription(imagepath);
 		buildDLDescInRequest(request, fileName, description);
 		return "home";
