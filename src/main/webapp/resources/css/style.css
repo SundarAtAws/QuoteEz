@@ -592,9 +592,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding-bottom: 10px;
 }
 
-#about .name{
-	color: black;
-}
 /* Product Featuress Section
 --------------------------------*/
 #features {
@@ -924,7 +921,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 0;
   width: 100%;
   height: 70vh;
-  opacity: 1.0;
+  opacity: 0.8;
   transition: 0.3s;
   
 }
@@ -936,8 +933,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #pricing .centerAlign { 
-  padding-left:30%;
-  padding-right:30%;
+  padding-left:40%;
+  padding-right:40%;
   
 }
 
@@ -1030,7 +1027,7 @@ font-size:18px;
 .sidebar {
   width: 100%;
   height: 90vh;
-  background:url("../images/premiumCalc.png") center;
+  background:url("/images/premiumCalc.png") center;
 
   position: relative;
 }
@@ -1053,6 +1050,9 @@ font-size:18px;
   color: #FFF;
   background: #1E90FF;
 }
+
+
+
 
 /* Frequently Asked Questions Section
 --------------------------------*/
@@ -1131,15 +1131,17 @@ font-size:18px;
   margin-bottom: 15px;
   overflow: hidden;
   height: 260px;
+  
 }
 
 #team .member .pic img {
   max-width: 100%;
+  max-height:100%;
 }
 
 #team .member h4 {
   font-weight: 700;
-  margin-bottom: 2px;
+   margin-bottom: 5px;
   font-size: 18px;
 }
 
@@ -1150,7 +1152,7 @@ font-size:18px;
 }
 
 #team .member .social {
-  margin-top: 15px;
+  margin-top: 1px;
 }
 
 #team .member .social a {
@@ -1363,5 +1365,253 @@ font-size:18px;
 
 
 /*-----------------------------------------------
-Slider
+Driver Details in Coverage page`
 ---------------------------------------------------*/
+
+.plan-container {
+  width: auto;
+  height:auto;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-top:5%;
+  position: relative;
+   box-shadow: 2px 2px 18px 2px rgba(0, 0, 0, 0.1);
+ 
+}
+.plan-container:hover {
+  cursor: pointer;
+  position: relative;
+   box-shadow: 4px 4px 26px 4px rgba(0, 0, 0, 0.1);
+ 
+}
+.plan-container .plan-header {
+  padding: 2em 0;
+  border-radius: 5px 5px 0 0;
+  background-color: #54ccb5;
+  text-align: center;
+}
+.plan-container .plan-header {
+  margin: 0 auto;
+}
+.plan-container .plan-header .icon-box .icon {
+  font-size: 2em;
+  color: #447F71;
+}
+.iconSmall{
+	font-size: 1em;
+	color: #447F71;
+	padding-right: 1%;
+	margin:0;
+}
+.plan-container .plan-header h2 {
+  color: #fff;
+  font-size: 1.2em;
+  margin:0;
+  padding-top: 0.2em;
+} 
+h2 .capt {
+  font-size:0.8em;
+	margin:0;  
+} 
+
+.plan-container .plan-header p {
+  margin: 0;
+  color: #447F71;
+}
+.plan-container .plan-details {
+  margin: 0 auto;
+  padding: 1em;
+  
+}
+.plan-container .plan-details h5{
+  font-size: 0.2em;
+  
+}
+.plan-container .plan-details ul {
+  padding-left: 0;
+  list-style: none;
+}
+.plan-container .plan-details ul li {
+  border-top: 3px solid #e8edef;
+  padding: 1em 0;
+  font-weight: bold;
+  color: #5f5f5f;
+}
+.plan-container .plan-details ul li:last-child {
+  border-bottom: 2px solid #e8edef;
+}
+.plan-container .plan-details ul li span {
+  font-weight: lighter;
+  color: #777777;
+}
+.plan-container .plan-details p {
+  background-color: #f4f4f4;
+  padding: 1em;
+  font-size: 1em;
+  color: #777777;
+}
+.plan-container .plan-details button {
+  background-color: #FF8939;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  width: auto;
+  border: 0;
+}.plan-container .plan-details button a {
+  background-color: #FF8939;
+  color: #fff;
+  text-align: center;
+}
+.plan-container .plan-details button:hover {
+  background-color: #e67b33;
+}
+
+
+/*------------------------
+button styles
+---------------*/
+
+.fill:hover,
+.fill:focus {
+  -webkit-box-shadow: inset 0 0 0 2em var(--hover);
+          box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  -webkit-box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+          box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 var(--hover);
+            box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 var(--hover);
+            box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+.close:hover,
+.close:focus {
+  -webkit-box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+          box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+}
+
+.raise:hover,
+.raise:focus {
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
+}
+
+.up:hover,
+.up:focus {
+  -webkit-box-shadow: inset 0 -3.25em 0 0 var(--hover);
+          box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+.slide:hover,
+.slide:focus {
+  -webkit-box-shadow: inset 16em 0 0 0 var(--hover);
+          box-shadow: inset 16em 0 0 0 var(--hover);
+}
+
+.offset {
+  -webkit-box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+          box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+.offset:hover, .offset:focus {
+  -webkit-box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+          box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+
+.fill {
+  --color: #a972cb;
+  --hover: #cb72aa;
+}
+
+.pulse {
+  --color: #ef6eae;
+  --hover: #ef8f6e;
+}
+
+.close {
+  --color: #ff7f82;
+  --hover: #ffdc7f;
+}
+
+.raise {
+  --color: #ffa260;
+  --hover: #e5ff60;
+}
+
+.up {
+  --color: #e4cb58;
+  --hover: #94e458;
+}
+
+.slide {
+  --color: #54ccb5;
+  --hover: #54ccb5;
+}
+
+/*
+slide {
+  --color: #8fc866;
+  --hover: #66c887;
+}
+*/
+
+.offset {
+  --color: #19bc8b;
+  --hover: #1973bc;
+}
+
+.buttons button {
+	
+  color: var(--color);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.buttons button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+.buttons button {
+  background: none;
+  border: 2px solid;
+  border-radius: 25px;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+.buttons button a {
+  color: #000;
+}
+
+.buttons button a:hover {
+  color: #fff;
+}
+
+
+/*--------------
+vertical dividers
+-------------*/
+
+.vertical-divider {
+    border-right: 0.1em solid grey;
+
+}
+
+
