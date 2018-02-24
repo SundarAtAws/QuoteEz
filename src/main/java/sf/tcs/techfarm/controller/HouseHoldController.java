@@ -38,6 +38,8 @@ public class HouseHoldController {
 				vehicle.setVIN(vin);
 				//call to vin service
 				dmvService.getVehicleDetails(vehicle);
+				String vehcileModel = vehicle.getMake() +" , "+ vehicle.getModel();
+				vinNumber.setVehicleModel(vehcileModel);
 				System.out.printf("Vehicle Details"+ vehicle.getMake());
 				vehicleList.add(vehicle);
 				System.out.printf("vin number- "+ vin);
@@ -58,6 +60,8 @@ public class HouseHoldController {
 				household.setHouseHoldAddress(driver.getAddress());
 				// call to Household drivers service
 				dmvService.getHouseHoldDrivers(household);
+				vinNumber.setPrimaryDriver(driver.getFirstName());
+				vinNumber.setAddress(driver.getAddress());
 				buildDriversName(household,vinNumber);
 				driverList.add(driver);
 				System.out.printf("Driver Details "+ driver.getAddress());
