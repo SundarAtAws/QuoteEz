@@ -47,6 +47,7 @@
  
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/checkbox_radio_font.css">
 <script>
+var householdDrivers;
 var resultData;
 var liabilityCov=0,collisionCov=0,compreCov=0, basicPremimum=0, premimum =0;
 var insurerName = ["InsurerOne","InsurerTwo","InsurerThree"];
@@ -255,11 +256,15 @@ function calPremimum(){
 
 function getHouseHoldDrivers() {
 	$.ajax({
+		async:false,
 		type : "POST",
 		contentType : "application/json",
 		url : "household",		
 		timeout : 100000,
 		success : function(data) {
+			$("#primaryDriverAddress").text(data.address);
+			$("#primaryDriver").text(data.primaryDriver);
+			$("#vehicleModel").text(data.vehicleModel);
 		$(data.driverLicenseNumList).each(function(index, driverLicenseNum) {
            var divId= "#driver"+index;
            var parentDivId= "#divDriver"+index;
@@ -283,11 +288,16 @@ function getHouseHoldDrivers() {
 	 for(i=0;i<=4;i++){
 		 var checkboxDivId= "#checkBoxDriver";
 		 var divId= "#driver";
+		 var driverId= "#householdDriver";
 		 checkboxDivId= checkboxDivId+i;
 		 divId = divId+i;
+		 driverId = driverId+i;
 		 if($(checkboxDivId).prop("checked") == true){
 			 var driverName = $(divId).text();
 			 driverNamesAr [i] = driverName;
+			 if(i != 0){
+				 $(driverId).text(driverName);
+			 }
 		 }
 	 }   
 	
@@ -576,49 +586,81 @@ var dropzone = new Dropzone('#demo-upload', {
     <!--==========================
       Pricing Section
     ============================-->
-    <section id="pricing" class="section-md">
+   <section id="pricing" class="section-md">
       <div class="container-fluid">
 
-        <div class="section-header" >
-          <h2 class="section-title" style="margin-bottom: 0px;margin-top: 1%;">Approximate Quote</h2>
-          <p class="section-description" style="padding-bottom: 0px;margin-bottom: 2%;">Below are the apporx. quotation for the given drivers and vehicle.
-        </div> <!-- End of Section header -->
-		
-		<div class="row">
-
-		  <div class="col-lg-3 quote-img">
-            <img src="${pageContext.request.contextPath}/resources/images/premiumCalc.png" alt="" class="wow fadeInLeft">
+  
+		<div class="col-lg-3">
+            
+			  
+			<div class="plan-container fadeInLeft">
+			  <div class="plan-header">
+				<div class="col-md-12 ">
+					<div class="col-lg-6 vertical-divider">
+						<div class="icon-box"><i class="fa fa-users icon"></i></div>
+						<h2 id="primaryDriver">Edward Leo Mcmahon <i class="capt">(Primary)</i></h2>
+					
+					</div>
+					<div class="col-lg-6">
+						<div class="icon-box"><i class="fa fa-car icon"></i></div>
+						<h2 id="vehicleModel">Chevrolet City Express <i class="capt">($55560)</i></h2>
+					
+					</div>
+				</div>
+				<div>
+				<div class="icon-box"><i class="fa fa-calendar icon"></i></div>
+					<h2></i>Effective Date: 02/26/2018<i class="capt"></i></h2>
+				</div>
+			  </div>
+			  <div class="plan-details">
+				<h5>Drivers in Household</h5>
+				<ul id="householdDriversList">
+				  <li id="householdDriver1"></li>
+				  <li id="householdDriver2"></li>
+				  <li id="householdDriver3"></li>
+				</ul>
+				<p id="primaryDriverAddress">750 GONZALEZ DR APT 6B, SAN FRANCISCO, CA 94512</p>
+				<button><a href="#features" class="scrollto">Click here to Customize Driver Selection</a></button>
+			  </div>
+			</div>
+			
           </div>
 
           <div class="col-md-9">
+		  
+			  <div class="section-header" >
+				<h2 class="section-title" style="margin-bottom: 0px;margin-top: 0px;">Approximate Quote</h2>
+				<p class="section-description" style="padding-bottom: 0px;margin-bottom: 10px;">Below are the apporx. quotation for the given drivers and vehicle.
+			  </div> <!-- End of Section header -->
+			
 			<div class="row">
 
-				  <div class="col-lg-4">
-					<div class="box featured wow fadeInLeft">
-					  <h3>Insurer One</h3>
-					  <h4><sup>$</sup><i id="basicPremimumInsurerOne"></i><span> /month</span></h4>
+			  <div class="col-lg-4">
+				<div class="box wow fadeInLeft">
+				  <h3>Insurer One</h3>
+				 <h4><sup>$</sup><i id="basicPremimumInsurerOne"></i><span> /month</span></h4>
 					  <h5><sup>$</sup><i id="sixMonthsPremimumInsurerOne"></i><span> /6 months</span></h5>
-					  <a href="#" class="get-started-btn">Buy</a>
-					</div>
-				  </div>
+				  <a href="#" class="get-started-btn">Buy</a>
+				</div>
+			  </div>
 
-				  <div class="col-lg-4">
-					<div class="box featured wow fadeInUp">
-					  <h3>Insurer Two</h3>
-					  <h4 ><sup>$</sup><i id="basicPremimumInsurerTwo"></i><span> /month</span></h4>
+			  <div class="col-lg-4">
+				<div class="box wow fadeInUp">
+				  <h3>Insurer Two</h3>
+					<h4 ><sup>$</sup><i id="basicPremimumInsurerTwo"></i><span> /month</span></h4>
 					  <h5><sup>$</sup><i id="sixMonthsPremimumInsurerTwo"></i><span> /6 months</span></h5>
-					  <a href="#" class="get-started-btn">Buy</a>
-					</div>
-				  </div>
+				  <a href="#" class="get-started-btn">Buy</a>
+				</div>
+			  </div>
 
-				  <div class="col-lg-4">
-					<div class="box featured wow fadeInRight">
-					  <h3>Insurer Three</h3>
-					 <h4><sup>$</sup><i id="basicPremimumInsurerThree"></i><span> /month</span></h4>
+			  <div class="col-lg-4">
+				<div class="box wow fadeInRight">
+				  <h3>Insurer Three</h3>
+				  <h4><sup>$</sup><i id="basicPremimumInsurerThree"></i><span> /month</span></h4>
 					  <h5><sup>$</sup><i id="sixMonthsPremimumInsurerThree"></i><span> /6 months</span></h5>
-					  <a href="#" class="get-started-btn">Buy</a>
-					</div>
-				  </div>
+				  <a href="#" class="get-started-btn">Buy</a>
+				</div>
+			  </div>
 
 			</div>	 <!--  End  of Row - Insurer Names  -->
 		  
@@ -629,7 +671,7 @@ var dropzone = new Dropzone('#demo-upload', {
 				   			 
 						<div class="boxRound wow">
 							<div class="col-lg-4">
-								<h5>Liability - BIPD: <span id="covergaePrice1">25$</span></h5>
+								<h5>Liability: <span id="covergaePrice1">25$</span></h5>
 							</div>
 							
 							<div class = "col-lg-8">
@@ -702,21 +744,14 @@ var dropzone = new Dropzone('#demo-upload', {
 
 			</div>	 <!--  End  Coverage sliders row  -->
 		  
-			<div class="row centerAlign">
+			<div class="row centerAlign buttons">
  
-				 <a href="#about" class="btn-get-started1 scrollto">Get Another Quote</a> &nbsp; &nbsp;
-
-				 <a href="#features" class="btn-get-started1 scrollto">Go to Household</a>
+				<button class=" slide scrollto"> <a href="#about">Get Another Quote</a> </button>
 				 
 			</div>	 <!--  End  of Row - buttons  -->
 		  					
 				
           </div> <!-- End of col-lg-8 for insurers and coverage details-->
-
-        </div>  <!-- End of Row -->
-
-    	
-
 			 
       </div> <!-- End of container -->
     </section><!-- #pricing -->
@@ -804,11 +839,14 @@ var dropzone = new Dropzone('#demo-upload', {
           <span class="section-divider"></span>
         </div>
         <div class="row wow fadeInUp">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-1 col-md-6">
+		  </div>
+		  
+		  <div class="col-lg-2 col-md-6">
             <div class="member">
-              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/phanindra.jpg" alt=""></div>
+              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/phani.jpg" alt=""></div>
               <h4>Phanindra Uppalapati</h4>
-              <span></span>
+              <span>Developer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -818,11 +856,12 @@ var dropzone = new Dropzone('#demo-upload', {
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
+          
+		  <div class="col-lg-2 col-md-6">
             <div class="member">
-              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/kumar.jpg" alt=""></div>
+              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/kumar1.jpg" alt=""></div>
               <h4>Kumaravel V</h4>
-              <span></span>
+              <span>Developer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -832,11 +871,11 @@ var dropzone = new Dropzone('#demo-upload', {
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-2 col-md-6">
             <div class="member">
-              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/anu.JPG" alt=""></div>
+              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/anu.jpg" alt=""></div>
               <h4>Anupriya</h4>
-              <span></span>
+              <span>Quality Analyst</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -846,11 +885,11 @@ var dropzone = new Dropzone('#demo-upload', {
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-2 col-md-6">
             <div class="member">
-              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/venkat.jpg" alt=""></div>
+              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/venkat1.jpg" alt=""></div>
               <h4>Venkatesh E</h4>
-              <span></span>
+              <span>Tester</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -859,12 +898,12 @@ var dropzone = new Dropzone('#demo-upload', {
               </div>
             </div>
           </div>
-           <div class="col-lg-4 col-md-6"></div>
-              <div class="col-lg-3 col-md-6">
+         
+		  <div class="col-lg-2 col-md-6">
             <div class="member">
-              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/team-1.jpg" alt=""></div>
+              <div class="pic"><img src="${pageContext.request.contextPath}/resources/images/team/sundar.jpg" alt=""></div>
               <h4>Sundaresan N</h4>
-              <span></span>
+              <span>Mentor</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -875,9 +914,9 @@ var dropzone = new Dropzone('#demo-upload', {
           </div>
         </div>
 
-		
       </div>
     </section><!-- #team -->
+
 
     <!--==========================
       Contact Section
